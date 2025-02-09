@@ -91,6 +91,28 @@ aireplay-ng -0 1 -a <AP_MAC> -c <CLIENT_MAC> mon0
 aircrack-ng -0 <capfile>
 ```
 
+WEP on Greyhack
+
+iwlist wlan0
+
+7F:36:98:09:4C:41  23%  Montierr_7DUO  
+1F:7B:30:BA:44:61  74%  Tory           
+6D:99:94:54:6C:B5  71%  Sporth         
+D1:C9:B7:80:B3:C2  53%  Cean           
+3B:89:B8:40:59:AF  55%  Stonalo
+
+airmon:
+
+set monitor mode
+`airmon start wlan0`
+
+`aireplay -b 1F:7B:30:BA:44:61 -e Tory`
+
+Gather 7000+ ACKs
+
+root@base:/root# aircrack file.cap 
+KEY FOUND! [REDACTED]
+
 ### PTW Attack
 1. Monitor mode setup:
 ```bash
